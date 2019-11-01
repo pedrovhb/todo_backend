@@ -8,7 +8,7 @@ client = MongoClient('mongodb://localhost')
 
 todo_collection = client.get_database('todo').get_collection('todos')
 
-if os.getenv('TEST_FLAG'):
+if os.getenv('TEST_DB'):
     todo_collection = client.get_database('todo_test').get_collection('todos')
     todo_collection.delete_many({})
 
